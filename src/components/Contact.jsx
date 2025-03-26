@@ -71,9 +71,9 @@ const Contact = () => {
         "template_lxkrh1f",
         {
           from_name: form.name,
-          to_name: "Reinhard Bonke",
+          to_name: "Noah Watch Only Walet",
           from_email: form.email,
-          to_email: "rbonke17@gmail.com",
+          to_email: "noahjohntrev@gmail.com",
           message: form.message,
         },
         "QM8pdmjBrrjIO4z55"
