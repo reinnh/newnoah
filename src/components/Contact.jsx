@@ -67,8 +67,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_2h353ry",
-        "template_lxkrh1f",
+        "service_tczrlvy",
+        "template_9vly6lc",
         {
           from_name: form.name,
           to_name: "Noah Watch Only Walet",
@@ -76,7 +76,7 @@ const Contact = () => {
           to_email: "noahjohntrev@gmail.com",
           message: form.message,
         },
-        "QM8pdmjBrrjIO4z55"
+        "flJ_rpArDt11trJ0v"
       )
       .then(
         () => {
