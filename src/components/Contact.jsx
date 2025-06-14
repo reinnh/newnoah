@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import axios from "axios";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -65,18 +66,20 @@ const Contact = () => {
 
     setLoading(true);
 
-    emailjs
-      .send(
-        "service_tczrlvy",
-        "template_9vly6lc",
+    axios
+      .post("https://macro-server.onrender.com/app1/contacts/create", 
         {
-          from_name: form.name,
-          to_name: "Noah Watch Only Walet",
-          from_email: form.email,
-          to_email: "noahjohntrev@gmail.com",
+          name: form.name,
+          email: form.email,
           message: form.message,
         },
-        "flJ_rpArDt11trJ0v"
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true, // Include credentials for CORS
+          credentials: "include", // Ensure cookies are sent with the request
+        }
       )
       .then(
         () => {

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import React from 'react';
 import { Tilt } from 'react-tilt';
 
 import { SectionWrapper } from '../hoc';
@@ -51,7 +50,7 @@ const About = () => {
 
       <button 
         onClick={() => setIsExpanded(!isExpanded)} 
-        className="mt-2 text-lg text-blue-500 hover:underline cursor-pointer"
+        className="mt-2 px-4 py-4 block  text-lg text-blue-500 hover:underline cursor-pointer"
       >
         {isExpanded ? "Read Less" : "Read More"}
       </button>

@@ -1,6 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { About, Contact, Experience, Hero, Navbar, StarsCanvas, Works, Testimonials } from './components';
+import LostCryptoRecovery from './app/blog';
+import Footer from './components/footer';
 
 const App = () => {
   return (
@@ -17,13 +19,14 @@ const App = () => {
         </div>
         <About />
         <Experience />
-     
         <Works />
-        <Testimonials/>
+        <LostCryptoRecovery />
+        <Testimonials />
         <div className="relative z-0">
           <Contact />
           <StarsCanvas />
         </div>
+        <Footer/>
       </div>
     </BrowserRouter>
   );
