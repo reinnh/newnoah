@@ -4,9 +4,9 @@ import { BsGlobe, BsApple, BsGooglePlay } from "react-icons/bs";
 
 export default function Footer() {
     return (
-        <footer className="flex flex-col  w-full justify-center items-center">
-            <div className="mt-2 px-6 py-12 container  text-sm">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <footer className="flex flex-col  w-full justify-center items-center ">
+            <div className="mt-2 px-6 py-12 container  text-sm   ">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:flex justify-between">
                    
 
                     <div>
