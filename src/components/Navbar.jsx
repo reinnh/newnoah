@@ -4,7 +4,7 @@ import { close, logo, menu } from '../assets';
 import { navLinks } from '../constants';
 import { styles } from '../styles';
 import me from '../assets/projects/colme.png'
-import noah from '../assets/pics/me.jpg'
+import noah from '/new.jpg'
 
 const Navbar = () => {
   const [active, setActive] = useState('');
@@ -64,8 +64,8 @@ const Navbar = () => {
           >
             <img src={noah} alt="logo" className="w-9 h-9 object-contain rounded-lg" />
             <p className="text-white text-[20px] font-bold cursor-pointer flex">
-              NOAH&nbsp;
-              <span className="sm:block hidden">WATCH ONLY WALLET</span>
+              CRYPTO&nbsp;
+              <span className="sm:block hidden">RECOVERY  ✅UK</span>
             </p>
           </Link>
           {renderNavLinks(false)}
