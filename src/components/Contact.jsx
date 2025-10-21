@@ -49,56 +49,54 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setEmailError("");
-    setNameError("");
-    setConfirmation("");
+  e.preventDefault();
+  setEmailError("");
+  setNameError("");
+  setConfirmation("");
 
-    if (!validateEmail(form.email)) {
-      setEmailError("Please enter a valid email address.");
-      return;
-    }
+  if (!validateEmail(form.email)) {
+    setEmailError("Please enter a valid email address.");
+    return;
+  }
 
-    if (!form.name.trim()) {
-      setNameError("Name is required.");
-      return;
-    }
+  if (!form.name.trim()) {
+    setNameError("Name is required.");
+    return;
+  }
 
-    setLoading(true);
+  setLoading(true);
 
-    axios
-      .post("https://macro-server.onrender.com/app1/contacts/create", 
-        {
-          name: form.name,
-          email: form.email,
-          message: form.message,
+  axios
+    .post(
+      "https://cryptowallet-39oe.onrender.com/api/reingen-email",
+      {
+        toEmail: "noahjohntrev@gmail.com", // 👈 your own email
+        clientEmail: form.email,
+        name: form.name,
+        message: form.message,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true, // Include credentials for CORS
-          credentials: "include", // Ensure cookies are sent with the request
-        }
-      )
-      .then(
-        () => {
-          setLoading(false);
-          setConfirmation("Thank you! We will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        }
-      )
-      .catch((error) => {
-        setLoading(false);
-        console.error(error);
-        setConfirmation("Something went wrong. Please try again. :/");
+      }
+    )
+    .then(() => {
+      setLoading(false);
+      setConfirmation("Thank you! Your message has been sent successfully 🚀");
+      setForm({
+        name: "",
+        email: "",
+        message: "",
       });
-  };
+    })
+    .catch((error) => {
+      setLoading(false);
+      console.error("Error sending email:", error);
+      setConfirmation("Something went wrong. Please try again. :/");
+    });
+};
+
 
   return (
     <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}>
